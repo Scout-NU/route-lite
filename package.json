@@ -1,12 +1,11 @@
 {
   "name": "route-lite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A lightweight, URL-free router for React applications for use in Chrome extensions or Electron apps",
-  "main": "build/route-lite.js",
-  "module": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack && webpack --config webpack.config.prod.js"
+    "build": "babel index.js --out-dir build && webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
