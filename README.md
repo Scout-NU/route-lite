@@ -14,7 +14,7 @@ export function goBack()
 
 #### `<Router />`
 
-The `Router` class is a React component that accepts no props, but can have children. The children of `Router` will be rendered when no known components are available in the Rotuer's history.
+The `Router` class is a React component that accepts no props, but can have children. The children of `Router` will be rendered when no known components are available in the Router's history.
 
 The `Router` should be placed at the application root.
 
