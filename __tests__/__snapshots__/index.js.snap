@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router renders default component only when nothing is on the stack 1`] = `
+<div>
+  Hello, world!
+</div>
+`;
+
+exports[`Router renders default component only when nothing is on the stack 2`] = `
+<div>
+  Component A
+</div>
+`;
+
+exports[`Router renders default component only when nothing is on the stack 3`] = `
+<div>
+  Hello, world!
+</div>
+`;
