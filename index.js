@@ -1,19 +1,23 @@
 import React from 'react';
-import { List, Record } from 'immutable';
 
-const StackItem = Record({ component: null, props: {} });
+class StackItem {
+  constructor(component, props) {
+    this.component = component;
+    this.props = props;
+  }
+}
 
-let stack = new List();
+let stack = new Array();
 let component;
 
 function goTo(comp, props = {}) {
-  stack = stack.push(new StackItem({ component: comp, props }));
+  stack.push(new StackItem(comp, props));
   component && component.forceUpdate();
 }
 
 function goBack() {
-  if (stack.size > 0) {
-    stack = stack.pop();
+  if (stack.length > 0) {
+    stack.pop();
   }
   component && component.forceUpdate();
 }
@@ -28,9 +32,11 @@ export default class Router extends React.Component {
   }
   render() {
     const { component: Component = ({ children }) => children, props } =
-      stack.last() || {};
+      stack[stack.length - 1] || {};
     return (
-      <Component {...props}>{stack.size == 0 && this.props.children}</Component>
+      <Component {...props}>
+        {stack.length == 0 && this.props.children}
+      </Component>
     );
   }
 }

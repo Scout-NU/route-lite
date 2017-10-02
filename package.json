@@ -1,6 +1,6 @@
 {
   "name": "route-lite",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A lightweight, URL-free router for React applications for use in Chrome extensions or Electron apps",
   "main": "build/index.js",
   "scripts": {
@@ -20,11 +20,7 @@
   "author": "Adam Markon <amarkon895@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^15.6.2 || ^16.0.0",
-    "immutable": "^3.8.1"
-  },
-  "dependencies": {
-    "immutable": "^3.8.1"
+    "react": "^15.6.2 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
