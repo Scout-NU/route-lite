@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Links handle clicks properly 1`] = `
+<a
+  className=""
+  href="http://google.com"
+  id=""
+  onClick={[Function]}
+>
+  Click here!
+</a>
+`;
+
+exports[`Links handle clicks properly 2`] = `
+<div>
+  Next Component
+</div>
+`;
+
+exports[`Renders plain links properly 1`] = `
+<a
+  className="my-class"
+  data-prop="42"
+  href="http://google.com"
+  id="the-link"
+  onClick={[Function]}
+>
+  Click here!
+</a>
+`;
+
 exports[`Router renders default component only when nothing is on the stack 1`] = `
 <div>
   Hello, world!
