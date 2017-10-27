@@ -18,6 +18,23 @@ The `Router` class is a React component that accepts no props, but can have chil
 
 The `Router` should be placed at the application root.
 
+#### `<Link />`
+
+The `Link` component is a convient way to link to an external website or a new component wihtout manually calling `goTo`. Accepted properties are:
+
+```js
+Link.propTypes = {
+  href: PropTypes.string,  // to direct to an external site
+  component: PropTypes.instanceOf(React.Component),  // to put a new component on the stack
+  componentProps: PropTypes.object,
+  className: PropTypes.string,
+  id: PropTypes.string,
+  onClick: PropTypes.func,
+}
+```
+
+**NOTE:** There is a "whitelist" of sorts for props, only `data-` props will be propogated down to the child link component.
+
 #### `goTo(component, props)`
 
 The `goTo` method accepts two arguments, a component and props. These must be separated so they can be kept in history without having to keep all components rendered at once.
@@ -34,10 +51,17 @@ Route Lite has a simple API that makes it easy to get started with no config. No
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router, { goTo, goBack } from 'route-lite';
+import Router, { Link, goBack } from 'route-lite';
 
 const A = () => {
-  return <div onClick={() => goTo(B, {text: "Component B"})}>Component A</div>
+  return (
+    <Link
+      component={B}
+      componentProps={{text: "Component B"}}
+    >
+      Component A
+    </Link>
+  );
 }
 
 const B = ({text}) => {
