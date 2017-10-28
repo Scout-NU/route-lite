@@ -22,6 +22,50 @@ function goBack() {
   component && component.forceUpdate();
 }
 
+export class Link extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
+  onClick = evt => {
+    evt.preventDefault();
+    if (this.props.component) {
+      goTo(this.props.component, this.props.componentProps || {});
+    } else if (this.props.href) {
+      open(this.props.href);
+    }
+    if (typeof this.props.onClick === 'function') {
+      this.props.onClick(evt);
+    }
+  };
+
+  render() {
+    const dataProps = {};
+    Object.keys(this.props).forEach(key => {
+      if (key.match('data')) {
+        dataProps[key] = this.props[key];
+      }
+    });
+
+    return (
+      <a
+        href={this.props.href ? this.props.href : ''}
+        className={this.props.className}
+        id={this.props.id}
+        {...dataProps}
+        onClick={this.onClick}
+      >
+        {this.props.children}
+      </a>
+    );
+  }
+}
+
+Link.defaultProps = {
+  className: '',
+  id: ''
+};
+
 export default class Router extends React.Component {
   constructor() {
     super();
