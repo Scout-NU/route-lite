@@ -63,7 +63,7 @@ export class Link extends React.PureComponent {
 
 Link.defaultProps = {
   className: '',
-  id: ''
+  id: '',
 };
 
 export default class Router extends React.Component {

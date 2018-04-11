@@ -6,27 +6,27 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'route-lite.js',
     library: 'routeLite',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader'
-      }
-    ]
+        use: 'babel-loader',
+      },
+    ],
   },
   externals: {
     react: {
       commonjs: 'react',
       commonjs2: 'react',
-      amd: 'react'
+      amd: 'react',
     },
     immutable: {
       commonjs: 'immutable',
       commonjs2: 'immutable',
-      amd: 'immutable'
-    }
-  }
+      amd: 'immutable',
+    },
+  },
 };

@@ -6,7 +6,7 @@ module.exports = Object.assign({}, dev, {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'route-lite.min.js',
-    library: 'routeLite'
+    library: 'routeLite',
   },
-  plugins: [new UglifyPlugin()]
+  plugins: [new UglifyPlugin()],
 });
